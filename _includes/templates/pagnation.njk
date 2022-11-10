@@ -1,0 +1,20 @@
+<div class="flex justify-center mt-3 mx-2">
+
+    <a href="{{pagination.previous}}" class="[&:any-link]:bg-blue-600 flex items-center px-4 py-2 mx-1 text-white transition-colors duration-300 transform bg-blue-600 rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
+        Previous
+    </a>
+
+    {% for page in pagination.totalPages | numToArray %}
+
+        <a {% if page === "/" %} href="/" {% else %} href="/page/{{page}}" {% endif %} class="bg-blue-600 items-center hidden px-4 py-2 mx-1 text-white transition-colors duration-300 transform  rounded-md sm:flex dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
+            {% if page === "/" %} 1 {% else %}
+                {{page}}
+            {% endif %}
+        </a>
+    {% endfor %}
+
+    <a href="{{ pagination.next }}" class="flex items-center px-4 py-2 mx-1 text-white transition-colors duration-300 transform bg-blue-600 rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200" >
+        Next
+    </a>
+
+</div>

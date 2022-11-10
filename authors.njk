@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Author list page 
+---
+
+<h1 class="text-center text-2xl my-5 ">Author List</h1>
+
+<section class="text-gray-400 bg-gray-900 body-font">
+
+    <div class="container px-5 py-24 mx-auto">
+
+        {% for author in search.pages("type=author") %}
+
+            <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col">
+                <img class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0"  src="{{ author.data.image }}" alt="{{ author.data.author_name }}">
+                <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                    <h2 class="text-white text-lg title-font font-medium mb-2">{{author.data.author_name}}</h2>
+                    <p class="leading-relaxed text-base">{{author.data.description}}</p>
+                    <a href="{{author.data.url}}" class="mt-3 text-indigo-400 inline-flex items-center">Read More
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        {% endfor %}
+
+    </div>
+
+</section>

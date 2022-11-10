@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Categories
+
+---
+
+<div class="container">
+
+  <h1 class="text-2xl text-center my-4">Categories page</h1>
+
+  <div class="tags are-large">
+    {% for category in search.values("category") %}
+      <a href="/category/{{ category | lower }}" class="tag is-link">
+        {{ category }}
+      </a>
+    {% endfor %}
+
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+---
+layout: layouts/base.njk
+---
+
+{% for post in results %}
+    {% include "templates/card.njk" %}
+{% else %}
+    <h2> Posts is empty </h2>
+{% endfor %}
+
+{% include "templates/pagnation.njk" %}

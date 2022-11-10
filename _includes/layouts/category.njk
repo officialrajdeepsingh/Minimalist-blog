@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+
+
+<div class="container mx-auto">
+  
+  <h1 class="text-center">Category {{ category }}</h1>
+  
+
+ {% set postslist = search.pages("'" + category + "'") %}
+
+  {% for post in postslist %}
+
+   {% include "templates/single.njk" %}
+   
+  {% endfor %}
+
+</div>
+

@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+<div class="container px-5 h-[48rem] py-24 mx-auto">
+  
+  <div class="flex flex-wrap -m-4">
+    
+    <div class="p-4 lg:w-6/6 md:w-6/6">
+
+      <div class="h-full w-full flex flex-row jusity-center items-center">
+
+          <img alt="{{ author_name }}" class="flex-shrink-0 rounded-lg w-56 h-56  rounded-full mb-4" src="{{ image }}">
+
+        <div class="w-3/6 ml-4 ">
+
+          <h2 class="title-font font-medium text-lg text-gray-900">
+            {{ author_name }}
+          </h2>
+          <h3 class="text-gray-500 mb-3">{{ job }}</h3>
+          <p class="mb-4">{{ description }}</p>
+          <span class="inline-flex">
+            {% for account in social %}
+              <a href="{{ account}}" target="_blank" class="mx-1 text-gray-500"> <h2> {{ account }} </h2></a>
+            {% endfor %}
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="p-2 my-3">
+    {{ content | safe }}
+  </div>
+
+</div>

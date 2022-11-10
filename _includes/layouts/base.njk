@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+   </head>
+  <body>
+
+    {% include "layouts/header.njk" %}
+
+    <main class="{{ bodyClass }}">
+      {{ content | safe }}
+    </main>
+
+    {% include "layouts/footer.njk" %}
+
+  </body>
+</html>

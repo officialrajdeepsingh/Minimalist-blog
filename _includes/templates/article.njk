@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+---
+<article class="container mx-auto p-2">
+  <div class="flex flex-col">
+
+    <h1 class="text-2xl text-black mt-3">{{ title }}</h1>
+    <p class="text-xl mt-1 text-gray-600">{{ description }}</p>
+
+    {% if author %}
+      <div class="flex flex-row mt-4">
+        
+        
+        {% if author.length <= 2 %}
+
+          {% for author in author %}
+
+            <img class="border-none object-cover object-center w-10 h-10 rounded-full" src="{{ author.image}}" alt="{{ author.author_name}}">
+
+            <div class="mx-4">
+              <a href="{{author.url}}" class="text-sm text-gray-700 dark:text-gray-200">
+                {{ author.author_name}}</a>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                {{author.job}}
+              </p>
+            </div>
+          {% endfor %}
+
+        {% else %}
+        
+          <img class="border-none object-cover object-center w-10 h-10 rounded-full" src="{{ author.image}}" alt="{{ author.name}}">
+
+          <div class="mx-4">
+            <a href="{{ author.url}}" class="text-sm text-gray-700 dark:text-gray-200">
+              {{ author.author_name}}</a>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              {{ author.job}}
+            </p>
+          </div>
+        {% endif %}
+
+      </div>
+
+    {% endif %}
+
+    {% if tags < 0 %}
+
+      <nav class="flex flex-row my-5">
+        {% for tag in tags %}
+          <a href="/tag/{{ tag.trim().toLowerCase().split(' ').join("-") }}/" class=" bg-blue-500 text-black p-2  mx-1">{{ tag }}</a>
+        {% endfor %}
+      </nav>
+
+    {% endif %}
+
+    <time class="mt-2" datetime="{{ date | date('DATETIME') }}">
+      {{ date | date('HUMAN_DATE') }}
+    </time>
+
+
+  </div>
+
+  <div class="mt-4">
+    {{ content | safe }}
+  </div>
+</article>
+
+{%- set previousPost = search.previousPage(url, "type=article") %}
+
+{% if previousPost %}
+  <ul class="flex flex-row w-full mt-10 justify-between p-4">
+    {%- if previousPost %}
+      <li class="w-6/12 text-left">
+      ← Previous: <a href="{{ previousPost.data.url }}" rel="prev">{{ previousPost.data.title }}</a>
+      </li>
+    {% endif %}
+
+    {%- set nextPost = search.nextPage(url, "type=article") %}
+    {%- if nextPost %}
+      <li class="w-6/12 text-right">
+        <strong>Next: <a href="{{ nextPost.data.url }}" rel="next">{{ nextPost.data.title }}</a> →</strong>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

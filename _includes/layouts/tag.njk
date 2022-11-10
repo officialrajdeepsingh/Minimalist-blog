@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+<div class="container mx-auto">
+
+  <h1 class="text-center">Tagged {{ tag }}</h1>
+
+  {% set postslist = search.pages("'" + tag + "'") %}
+
+  {% for post in postslist %}
+
+   {% include "templates/single.njk" %}
+   
+  {% endfor %}
+
+  <hr>
+
+</div>
+
+
