@@ -16,8 +16,8 @@
                 {{ post.data.description }}
             </p>
 
-            {# Reusable button component   #}
-            {{ comp.button({ text: "Read more",url: "{{ post.data.url }}"}) | safe }}
+            <a href="{{  post.data.url }}" class="inline-block p-2 bg-blue-700 mt-4 text-white hover:bg-blue-500">Read more</a>
+
 
             <div class="flex items-center mt-6">
 
