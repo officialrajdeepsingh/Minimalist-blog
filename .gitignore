@@ -1,2 +1,7 @@
 ./_bin
+/.vscode
+/_site
+
+_bin
 .vscode
+_site

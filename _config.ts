@@ -33,6 +33,8 @@ const site = lume(
   }
 );
 
+site.use(pagefind());
+
 
 site.use(
   relations({
