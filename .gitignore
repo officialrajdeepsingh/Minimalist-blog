@@ -1,7 +1,5 @@
 ./_bin
-/.vscode
-/_site
+./_site
 
 _bin
-.vscode
 _site
