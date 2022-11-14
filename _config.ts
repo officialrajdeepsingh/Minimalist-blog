@@ -27,6 +27,7 @@ import code_highlight from "lume/plugins/code_highlight.ts";
 
 const site = lume(
   {
+    location: new URL("https://officialrajdeepsingh.github.io/minimalist-blog-github-page/"),
     server: {
       page404: "/404/",
     },
