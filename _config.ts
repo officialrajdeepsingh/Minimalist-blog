@@ -68,7 +68,7 @@ site.use(minifyHTML());
 site.use(date());
 site.use(code_highlight());
 site.ignore("readme.md")
-site.use(netlify_cms());
+// site.use(netlify_cms());
 site.use(slugifyUrls({
   lowercase: true
 }));
