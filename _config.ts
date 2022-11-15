@@ -23,11 +23,11 @@ import svgo from "lume/plugins/svgo.ts";
 import terser from "lume/plugins/terser.ts";
 import code_highlight from "lume/plugins/code_highlight.ts";
 
-// import netlify_cms from "lume/plugins/netlify_cms.ts";
+import netlify_cms from "lume/plugins/netlify_cms.ts";
+
 
 const site = lume(
   {
-    location: new URL("https://officialrajdeepsingh.github.io/minimalist-blog-github-page/"),
     server: {
       page404: "/404/",
     },
@@ -67,7 +67,8 @@ site.use(windi_css());
 site.use(minifyHTML());
 site.use(date());
 site.use(code_highlight());
-site.ignore("readme.md") // ignore readme.md file
+site.ignore("readme.md")
+site.use(netlify_cms());
 site.use(slugifyUrls({
   lowercase: true
 }));

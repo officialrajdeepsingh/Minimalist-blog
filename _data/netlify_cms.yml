@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images
+
+collections:
+  - label: Posts
+    name: posts
+    preview_path: "/{{slug}}"
+    description: List of posts
+    folder: posts
+    extension: md
+    create: true
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+
+      - label: Description
+        name: description
+        widget: text
+
+      - label: Date
+        name: date
+        widget: date
+      
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: true
+      
+      - label: tags
+        name: tags
+        widget: list
+      
+      - label: category
+        name: category
+        widget: list
+
+      - label: image
+        name: image
+        widget: image
+
+      - label: author id
+        name: author_id
+        widget: number
+      
+      - label: Content
+        name: body
+        widget: markdown
