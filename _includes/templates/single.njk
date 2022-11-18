@@ -19,20 +19,34 @@
             <a href="{{ post.data.url }}" class="inline-block mt-2 text-blue-500  hover:text-blue-300">Read more </a>
 
             <div class="flex items-center mt-6">
+                {% if post.data.author.length <= 2 %}
 
-                <img class="border-none object-cover object-center w-10 h-10 rounded-full" src="{{ post.data.author.image}}" alt="{{ post.data.author.name}}">
+                    {% for author in post.data.author %}
 
+                        <img class="border-none object-cover object-center w-10 h-10 rounded-full" src="{{ author.image}}" alt="{{ author.author_name}}">
 
+                        <div class="mx-4">
+                            <a href="{{author.url}}" class="text-sm text-gray-700 dark:text-gray-200">
+                                {{ author.author_name}}</a>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                                {{author.job}}
+                            </p>
+                        </div>
+                    {% endfor %}
+                {% else %}
 
-                <div class="mx-4">
-                    <a href="{{ post.data.author.url}}" class="text-sm text-gray-700 dark:text-gray-200">
-                        {{ post.data.author.author_name}}</a>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">
-                        {{post.data.author.job}}
-                    </p>
-                </div>
+                    <img class="border-none object-cover object-center w-10 h-10 rounded-full" src="{{ post.data.author.image}}" alt="{{ post.data.author.name}}">
+
+                    <div class="mx-4">
+                        <a href="{{ post.data.author.url}}" class="text-sm text-gray-700 dark:text-gray-200">
+                            {{ post.data.author.author_name}}</a>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            {{post.data.author.job}}
+                        </p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    
+
 </div>
