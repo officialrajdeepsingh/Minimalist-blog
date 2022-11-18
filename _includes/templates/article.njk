@@ -43,15 +43,11 @@ layout: layouts/base.njk
 
     {% endif %}
 
-    {% if tags < 0 %}
-
       <nav class="flex flex-row my-5">
         {% for tag in tags %}
           <a href="/tag/{{ tag.trim().toLowerCase().split(' ').join("-") }}/" class=" bg-blue-500 text-black p-2  mx-1">{{ tag }}</a>
         {% endfor %}
       </nav>
-
-    {% endif %}
 
     <time class="mt-2" datetime="{{ date | date('DATETIME') }}">
       {{ date | date('HUMAN_DATE') }}
@@ -86,6 +82,7 @@ layout: layouts/base.njk
 
 <div class="container p-2 mx-auto mt-6"> 
 
+{#  Addding the utteranc Commenting script #}
 <h1 class="text-center text-2xl my-3"> Comment </h1> 
 
 <script src="https://utteranc.es/client.js"
