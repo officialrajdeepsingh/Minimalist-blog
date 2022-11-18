@@ -1,6 +1,6 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v1.12.1/",
-    "react/jsx-runtime": "https://deno.land/x/lume@v1.12.1/deps/react_runtime.ts"
+    "lume/": "https://deno.land/x/lume@v1.13.0/",
+    "react/jsx-runtime": "https://deno.land/x/lume@v1.13.0/deps/react_runtime.ts"
   }
 }

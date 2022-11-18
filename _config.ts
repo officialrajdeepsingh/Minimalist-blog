@@ -23,7 +23,7 @@ import svgo from "lume/plugins/svgo.ts";
 import terser from "lume/plugins/terser.ts";
 import code_highlight from "lume/plugins/code_highlight.ts";
 
-import netlify_cms from "lume/plugins/netlify_cms.ts";
+// import netlify_cms from "lume/plugins/netlify_cms.ts";
 
 
 const site = lume(
