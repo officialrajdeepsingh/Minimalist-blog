@@ -1,14 +1,13 @@
 ---
 title: My netlify CMS base first post
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Pellentesque efficitur finibus tortor. Mauris ultrices vestibulum tincidunt.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur finibus tortor. Mauris ultrices vestibulum tincidunt.
 date: 2022-11-15T08:14:47.738Z
 draft: false
 tags:
   - Netlify
   - Netlify-CMS
 category:
-  - CMS
+  - Netlify
 image: /images/teacup.jpg
 author_id: 1
 ---

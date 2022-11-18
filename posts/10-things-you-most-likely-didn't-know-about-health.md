@@ -11,7 +11,6 @@ tags:
   - Didn't Know
 category:
   - Health
-  - healthy
 image: /images/vegetables.jpg
 author_id: 10
 ---
