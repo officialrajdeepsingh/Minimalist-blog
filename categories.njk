@@ -1,18 +1,20 @@
 ---
 layout: layouts/base.njk
 title: Categories
-
 ---
 
-<div class="container">
+<div class="container mx-auto p-3">
 
-  <h1 class="text-2xl text-center my-4">Categories page</h1>
+  <h1 class="text-2xl text-center my-4">Categories page go here </h1>
 
-  <div class="tags are-large">
+  <div class="flex flex-wrap mt-3">
+
     {% for category in search.values("category") %}
-      <a href="/category/{{ category | lower }}" class="tag is-link">
-        {{ category }}
+
+      <a href="/category/{{ category.trim().toLowerCase().split(' ').join("-")  }}" class="bg-blue-500 text-black p-2 m-2">
+        {{category}} 
       </a>
+
     {% endfor %}
 
   </div>
